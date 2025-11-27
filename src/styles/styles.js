@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
             android: 'lightgreen',
         }),
         justifyContent: 'center',
-        alignItems: 'center',
+        // alignItems: 'center',
         padding: 16,
     },
 

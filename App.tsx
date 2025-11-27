@@ -6,7 +6,7 @@
  */
 
 import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, Text, useColorScheme } from 'react-native';
+import { StatusBar, StyleSheet, Text, useColorScheme, View } from 'react-native';
 import {
   SafeAreaProvider,
   SafeAreaView,
@@ -14,6 +14,9 @@ import {
 import { styles } from './src/styles/styles';
 import VisibilityScreen from './src/screens/VisibilityScreen';
 import PostScreen from './src/screens/PostScreen';
+import ImageListScreen from './src/screens/ImageListScreen';
+import SplashScreen from './src/screens/SplashScreen';
+import { AuthProvider } from './src/context/AuthContext';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
@@ -27,18 +30,18 @@ function App() {
 }
 
 function AppContent() {
-  const handlePress = () => {
-    console.log('ok');
-  };
-
   return (
-    <SafeAreaView style={styles.container}>
-      {/* <SafeAreaView style={{ flex: 1 }}> */}
-      {/* <Text style={styles.title}>Platform Specific Button Example</Text>
+    <AuthProvider>
+      <SafeAreaView style={styles.container}>
+        {/* <SafeAreaView style={{ flex: 1 }}> */}
+        {/* <Text style={styles.title}>Platform Specific Button Example</Text>
       <MyButton title="Click Me" onPress={handlePress} /> */}
-      {/* <VisibilityScreen /> */}
-      <PostScreen />
-    </SafeAreaView>
+        {/* <VisibilityScreen /> */}
+        {/* <PostScreen /> */}
+        {/* <ImageListScreen /> */}
+        <SplashScreen />
+      </SafeAreaView>
+    </AuthProvider>
   );
 }
 
